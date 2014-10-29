@@ -1,3 +1,0 @@
-whatsthere
-==========
-Marat please add some project so we could start ...

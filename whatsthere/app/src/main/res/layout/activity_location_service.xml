@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_stop_location_btn"
+        android:id="@+id/startStopLocationBtn"
+        />
+
+
+
+    <TextView
+        android:id="@+id/lastSavedLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last saved location" />
+
+    <TextView
+        android:id="@+id/networkLocationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NetWork Location:" />
+
+    <TextView
+        android:id="@+id/networkLocationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/networkAccurecyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Network Accurecy :" />
+
+    <TextView
+        android:id="@+id/networkAccurecyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/gpsLocationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS Location :" />
+
+    <TextView
+        android:id="@+id/gpsLocationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/gpsAccurecyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS Accurecy :" />
+
+    <TextView
+        android:id="@+id/gpsAccurecyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+
+</LinearLayout>
