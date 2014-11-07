@@ -8,4 +8,7 @@
     <string name="app_id">1498093503803299</string>
     <string name="title_activity_face_book_login">FaceBookLoginActivity</string>
     <string name="get_started">To get started, log in using Facebook</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
