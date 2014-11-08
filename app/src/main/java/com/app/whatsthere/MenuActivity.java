@@ -1,7 +1,9 @@
 package com.app.whatsthere;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +14,7 @@ public class MenuActivity extends Activity  {
 
     Button btnTakePic;
     Button btnWhatsThere;
+    static int  REQUEST_IMAGE_CAPTURE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,11 @@ public class MenuActivity extends Activity  {
         btnTakePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
 
             }
         });
@@ -47,5 +55,12 @@ public class MenuActivity extends Activity  {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+        MenuActivity.this.finish();
     }
 }

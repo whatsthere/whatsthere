@@ -2,17 +2,17 @@
 <pre-dex-items>
 
     <item
-        dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/classes-e42a693e804e70324ab7ac14657ad462b3d2c321.jar"
-        jar="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/exploded-aar/com.facebook.android/facebook/3.19.1/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="cd945d0f2dcf17197dc59c67e60ed4f62fd2d249"/>
-    <item
         dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-bca9cd8c8082330ef7549e0398af852faae531fd.jar"
         jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/classes-e42a693e804e70324ab7ac14657ad462b3d2c321.jar"
+        jar="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/exploded-aar/com.facebook.android/facebook/3.19.1/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b8a5f0a5168a4a80f46a756dde1f7ce02f0f334b"/>
     <item
         dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-421be8f1ead0aef02b0d169ad1603396c2bd89c8.jar"
         jar="/Users/maratibragimov/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"
