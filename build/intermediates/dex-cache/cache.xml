@@ -2,17 +2,17 @@
 <pre-dex-items>
 
     <item
-        dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-bca9cd8c8082330ef7549e0398af852faae531fd.jar"
-        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/retrofit-1.7.1-d2227c7d526785d3341458cbbbbcf1b30f85d13b.jar"
+        jar="/Users/maratibragimov/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.7.1/168a878946d665200edc733ac715b1264a6cd7b6/retrofit-1.7.1.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+        sha1="168a878946d665200edc733ac715b1264a6cd7b6"/>
     <item
         dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/classes-e42a693e804e70324ab7ac14657ad462b3d2c321.jar"
         jar="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/exploded-aar/com.facebook.android/facebook/3.19.1/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="b8a5f0a5168a4a80f46a756dde1f7ce02f0f334b"/>
+        sha1="2ce9fb1597e9d781643ab1a84bb1b078c66af6c8"/>
     <item
         dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-421be8f1ead0aef02b0d169ad1603396c2bd89c8.jar"
         jar="/Users/maratibragimov/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"
@@ -31,5 +31,23 @@
         jumboMode="false"
         revision="20.0.0"
         sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-bca9cd8c8082330ef7549e0398af852faae531fd.jar"
+        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/gson-2.3-0d0cbb14727a7cfe5e1760c40db3ebb7d97ba386.jar"
+        jar="/Users/maratibragimov/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce"/>
+    <item
+        dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/picasso-2.3.2-cc1d9fd7af4a7fbfcd4e6ee433184f92f537418c.jar"
+        jar="/Users/maratibragimov/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.3.2/d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27/picasso-2.3.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27"/>
 
 </pre-dex-items>
