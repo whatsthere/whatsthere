@@ -12,7 +12,7 @@
         jar="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/exploded-aar/com.facebook.android/facebook/3.19.1/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="2ce9fb1597e9d781643ab1a84bb1b078c66af6c8"/>
+        sha1="c991fc2ffe3225d3de0f30c27a780665b2f32b1b"/>
     <item
         dex="/Users/maratibragimov/workspace/whatsthere/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-421be8f1ead0aef02b0d169ad1603396c2bd89c8.jar"
         jar="/Users/maratibragimov/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"

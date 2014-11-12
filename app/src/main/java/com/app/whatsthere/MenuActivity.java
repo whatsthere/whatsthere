@@ -50,37 +50,13 @@ public class MenuActivity extends Activity  {
         btnWhatsThere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                String url = "http://www.avajava.com";
-//                RestAdapter restAdapter = new RestAdapter.Builder()
-//                        .setEndpoint(url).build();
-//                PictureApi pictureApi = restAdapter.create(PictureApi.class);
-//                pictureApi.getPhotos("avajavalogo.jpg",new Callback<Response>() {
-//                    @Override
-//                    public void success(Response response, Response response2) {
-//
-//                        try
-//                        {
-//                            InputStream is = response.getBody().in();
-//
-//                            Bitmap bmp = BitmapFactory.decodeStream(is);
-//                            ImageView img = (ImageView)findViewById(R.id.img);
-//                            img.setImageBitmap(bmp);
-//
-//                        }
-//                        catch (Exception e)
-//                        {
-//
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void failure(RetrofitError retrofitError) {
-//
-//                    }
-//                });
-                ImageView img = (ImageView)findViewById(R.id.img);
 
-                Picasso.with(MenuActivity.this).load("http://i.imgur.com/DvpvklR.png").into(img);
+//                ImageView img = (ImageView)findViewById(R.id.img);
+//
+//                Picasso.with(MenuActivity.this).load("http://i.imgur.com/DvpvklR.png").into(img);
+
+                Intent intent = new Intent(MenuActivity.this,WhatsThereActivty.class);
+                startActivity(intent);
             }
         });
 

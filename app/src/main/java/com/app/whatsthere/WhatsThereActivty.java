@@ -4,14 +4,33 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import com.app.whatsthere.customcomponents.WhatsthereListAdapter;
+import com.app.whatsthere.datamodels.WhatsthereListItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class WhatsThereActivty extends Activity {
 
+    private ListView whatsThereListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.whats_there_activty);
+         whatsThereListView = (ListView)findViewById(R.id.whatsThereListView);
+        List<WhatsthereListItem> data = new ArrayList<WhatsthereListItem>();
+        WhatsthereListItem item ;
+        for(int i = 0;i<30;i++) {
+
+            item = new WhatsthereListItem();
+            item.setImage("http://i.imgur.com/DvpvklR.png");
+            data.add(item);
+        }
+        WhatsthereListAdapter adapter = new WhatsthereListAdapter(this,data);
+        whatsThereListView.setAdapter(adapter);
     }
 
 
