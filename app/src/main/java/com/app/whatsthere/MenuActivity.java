@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -34,6 +35,10 @@ public class MenuActivity extends Activity  {
 
         btnTakePic = (Button)findViewById(R.id.btnTakePic);
         btnWhatsThere = (Button)findViewById(R.id.btnWhatsThere);
+
+
+
+
 
         btnTakePic.setOnClickListener(new View.OnClickListener() {
             @Override
