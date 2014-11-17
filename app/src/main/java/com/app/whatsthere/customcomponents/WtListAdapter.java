@@ -1,6 +1,7 @@
 package com.app.whatsthere.customcomponents;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +13,14 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.app.whatsthere.ImagePreviewActivity;
 import com.app.whatsthere.R;
 import com.app.whatsthere.datamodels.WtListItem;
 import com.squareup.picasso.Picasso;
 
 import org.lucasr.twowayview.TwoWayView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -64,17 +67,30 @@ public class WtListAdapter extends BaseAdapter {
             TextView titleTextVie =(TextView) wtListItemView.findViewById(R.id.hashTagLabel);
             Typeface font = Typeface.createFromAsset(context.getAssets(), "Bellerose.ttf");
             titleTextVie.setTypeface(font);
-            List<String>data = listItem.getImages();
+            final ArrayList<String> data = (ArrayList<String>) listItem.getImages();
 
             for (int i = 0; i <  imageListContainer.getChildCount(); i++) {
                 if(i<data.size()){
+
                     ImageView imageView = (ImageView)imageListContainer.getChildAt(i);
+                    imageView.setTag(data.get(i));
                     Picasso.
                             with(context).
                             load(data.get(i)).
                             resize(200, 200).
                             placeholder(R.drawable.placeholder).
                             into(imageView);
+                    imageView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            Intent intent = new Intent(context,ImagePreviewActivity.class);
+                            intent.putStringArrayListExtra(ImagePreviewActivity.URLS_LIST_KEY,data);
+                            context.startActivity(intent);
+
+                        }
+                    });
+
 
                 }
             }

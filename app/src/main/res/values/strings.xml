@@ -12,5 +12,6 @@
     <string name="title_activity_whats_there_activty">WhatsThere</string>
     <string name="hello_world">Hello world!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_image_preview">ImagePreviewActivity</string>
 
 </resources>

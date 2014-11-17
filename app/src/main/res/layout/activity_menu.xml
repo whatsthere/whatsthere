@@ -2,24 +2,36 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/menu_bg"
+    android:gravity="center"
      >
+
+<GridLayout
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:columnCount="2"
+    android:rowCount="2"
+    android:orientation="horizontal"
+    android:layout_alignParentTop="true"
+      >
 
 
     <Button
         android:id="@+id/btnTakePic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Take a picture"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/add_camera"
+        android:layout_gravity="left|top"
+        android:layout_margin="10dp"
+        />
     <Button
         android:id="@+id/btnWhatsThere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Whats there?"/>
-    
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/img"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/marker"
+        android:layout_gravity="left|top"
+        android:layout_margin="10dp"/>
+</GridLayout>
+
 
 </LinearLayout>
