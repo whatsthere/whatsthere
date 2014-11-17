@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -41,6 +42,10 @@
         <activity
             android:name=".ImagePreviewActivity"
             android:label="@string/title_activity_image_preview" >
+        </activity>
+        <activity
+            android:name=".CapturedImagePreviewActivity"
+            android:label="@string/title_activity_captured_image_preview" >
         </activity>
     </application>
 

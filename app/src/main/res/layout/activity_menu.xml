@@ -3,6 +3,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:gravity="center"
+
      >
 
 <GridLayout
@@ -13,24 +14,55 @@
     android:rowCount="2"
     android:orientation="horizontal"
     android:layout_alignParentTop="true"
-      >
+    android:background="@drawable/border"
+     >
 
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/tvTakePic"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take a picture"
+        android:gravity="center"/>
     <Button
         android:id="@+id/btnTakePic"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@drawable/add_camera"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/instagram"
         android:layout_gravity="left|top"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+
         />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+    <TextView
+        android:id="@+id/tvWhatsThere"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="whats there?"
+        android:gravity="center"
+        android:textSize="20sp"/>
     <Button
         android:id="@+id/btnWhatsThere"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/marker"
         android:layout_gravity="left|top"
-        android:layout_margin="10dp"/>
+        android:layout_marginLeft="30dp"/>
+    </LinearLayout>
 </GridLayout>
 
 
