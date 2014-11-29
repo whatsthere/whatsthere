@@ -10,15 +10,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.app.whatsthere.api.PictureApi;
+import com.app.whatsthere.api.PictureUploader;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
+import retrofit.Callback;
 import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 import retrofit.mime.TypedFile;
+import retrofit.mime.TypedString;
 
 
 public class CapturedImagePreviewActivity extends Activity {
@@ -62,18 +71,59 @@ public class CapturedImagePreviewActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                RestAdapter restAdapter = new RestAdapter
-                        .Builder()
-                        .setEndpoint("http://194.90.78.215/")
-                        .build();
+//                RestAdapter restAdapter = new RestAdapter
+//                        .Builder()
+//                        .setEndpoint("http://194.90.78.215:80/")
+//                        .setLogLevel(RestAdapter.LogLevel.FULL)
+//                        .build();
+//
+//               PictureApi pictureApi = restAdapter.create(PictureApi.class);
+//
+//
+//                TypedFile typedFile = new TypedFile("image/jpeg",new File(imageUri.getPath()));
+//                pictureApi.uploadFile(new TypedString("Marat"),typedFile,new Callback<Response>() {
+//                    @Override
+//                    public void success(Response response, Response response2) {
+//
+//                        if(response.getStatus()==200){
+//
+//                            Toast.makeText(CapturedImagePreviewActivity.this,"image uploaded successfully",Toast.LENGTH_LONG);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void failure(RetrofitError error) {
+//
+//                        Toast.makeText(CapturedImagePreviewActivity.this,"error in image upload ",Toast.LENGTH_LONG);
+//                    }
+//                });
 
-               PictureApi pictureApi = restAdapter.create(PictureApi.class);
+                File file = new File(imageUri.getPath());
+
+                PictureUploader.PictureRequestBuilder builder = new PictureUploader.PictureRequestBuilder ();
 
 
-                TypedFile typedFile = new TypedFile("image/jpeg",new File(imageUri.getPath()));
-                pictureApi.uploadFile(typedFile);
+                builder.addPart("file",file)
+                        .addPart("name",new SimpleDateFormat("yyyyMMdd_HHmmss",
+                                Locale.getDefault()).format(new Date()))
+                        .setUrl("http://194.90.78.215:80/data/image/upload");
 
+                PictureUploader pictureUploader = new PictureUploader();
+                pictureUploader.uploadImage(builder,new PictureUploader.ImageUploadCallback() {
+                    @Override
+                    public void onSuccess(int code, String description) {
 
+                        Toast.makeText(CapturedImagePreviewActivity.this,description,Toast.LENGTH_SHORT).show();
+                        CapturedImagePreviewActivity.this.finish();
+                    }
+
+                    @Override
+                    public void onError(int code, String description) {
+
+                        Toast.makeText(CapturedImagePreviewActivity.this,description,Toast.LENGTH_SHORT).show();
+                        CapturedImagePreviewActivity.this.finish();
+                    }
+                });
             }
         });
     }

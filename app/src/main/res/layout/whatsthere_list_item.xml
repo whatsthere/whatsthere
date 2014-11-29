@@ -6,6 +6,7 @@
     android:layout_height="fill_parent"
 
 
+
     >
 
     <TextView
@@ -17,41 +18,61 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="30dp"
-
         />
 
 
   <HorizontalScrollView
-     android:layout_width="wrap_content"
+
+     android:layout_width="fill_parent"
      android:layout_height="wrap_content"
-     android:layout_marginTop="50dp" >
+     android:layout_marginTop="50dp"
+    >
     <LinearLayout
      android:id="@+id/imageListContainer"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
      android:orientation="horizontal"
-        android:background="@drawable/border">
+        android:background="@android:drawable/dialog_holo_light_frame"
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@drawable/border"
-            android:padding="2dp"/>
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@drawable/border"
-            android:padding="2dp"/>
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@drawable/border"
-            android:padding="2dp"/>
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@drawable/border"
-            android:padding="2dp"/>
+    >
+
+
+            <ImageView
+              android:layout_width="250dp"
+               android:layout_height="250dp"
+               android:layout_margin="5dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+
+                />
+
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+
+                />
+
+
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+
+                />
+
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+
+                />
+
 
 
 
@@ -60,15 +81,5 @@
 
   </HorizontalScrollView>
 
-    <!--<ListView-->
-        <!---->
-        <!--android:id="@+id/horizontalList"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="fill_parent"-->
-        <!--android:drawSelectorOnTop="false"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_below="@id/hashTagLabel"-->
-        <!--android:columnWidth="100dp"-->
-   <!--/>-->
 
 </com.app.whatsthere.customcomponents.WtListItemView>

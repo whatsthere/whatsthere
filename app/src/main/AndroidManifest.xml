@@ -40,7 +40,7 @@
             android:label="@string/title_activity_whats_there_activty" >
         </activity>
         <activity
-            android:name=".ImagePreviewActivity"
+            android:name=".DownloadedImagesPreviewActivity"
             android:label="@string/title_activity_image_preview" >
         </activity>
         <activity

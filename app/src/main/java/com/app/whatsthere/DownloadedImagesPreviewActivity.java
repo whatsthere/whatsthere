@@ -3,10 +3,6 @@ package com.app.whatsthere;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -18,10 +14,9 @@ import android.widget.LinearLayout;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
-public class ImagePreviewActivity extends Activity {
+public class DownloadedImagesPreviewActivity extends Activity {
 
     public static String URLS_LIST_KEY = "UrlsList";
     private ArrayList<String> urls;
@@ -30,7 +25,7 @@ public class ImagePreviewActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_preview);
+        setContentView(R.layout.activity_downloaded_images_preview);
         urls = getIntent().getStringArrayListExtra(URLS_LIST_KEY);
         mPager = (ViewPager)findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePagerAdapter();
@@ -58,21 +53,22 @@ public class ImagePreviewActivity extends Activity {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
 
-            ImageView imageView = new ImageView(ImagePreviewActivity.this);
+            ImageView imageView = new ImageView(DownloadedImagesPreviewActivity.this);
 
             LayoutParams imageParams = new LayoutParams(
                     LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
             imageView.setLayoutParams(imageParams);
 
             Picasso.
-                    with(ImagePreviewActivity.this).
+                    with(DownloadedImagesPreviewActivity.this).
                     load(urls.get(position)).
                     into(imageView);
 
-            LinearLayout layout = new LinearLayout(ImagePreviewActivity.this);
+            LinearLayout layout = new LinearLayout(DownloadedImagesPreviewActivity.this);
             layout.setOrientation(LinearLayout.VERTICAL);
             LayoutParams layoutParams = new LayoutParams(
                     LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+            layout.setBackgroundResource(R.drawable.rounded_corners_imageview);
 
             layout.setLayoutParams(layoutParams);
 

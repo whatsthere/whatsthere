@@ -7,18 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.app.whatsthere.ImagePreviewActivity;
+import com.app.whatsthere.DownloadedImagesPreviewActivity;
 import com.app.whatsthere.R;
 import com.app.whatsthere.datamodels.WtListItem;
 import com.squareup.picasso.Picasso;
-
-import org.lucasr.twowayview.TwoWayView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,8 +80,8 @@ public class WtListAdapter extends BaseAdapter {
                         @Override
                         public void onClick(View view) {
 
-                            Intent intent = new Intent(context,ImagePreviewActivity.class);
-                            intent.putStringArrayListExtra(ImagePreviewActivity.URLS_LIST_KEY,data);
+                            Intent intent = new Intent(context,DownloadedImagesPreviewActivity.class);
+                            intent.putStringArrayListExtra(DownloadedImagesPreviewActivity.URLS_LIST_KEY,data);
                             context.startActivity(intent);
 
                         }

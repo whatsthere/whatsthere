@@ -2,7 +2,6 @@ package com.app.whatsthere;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,8 +11,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.TextView;
+
+import com.app.whatsthere.utils.FileUtils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -29,8 +33,10 @@ public class MenuActivity extends Activity  {
     Button btnTakePic;
     Button btnWhatsThere;
     TextView tvWhatsThere,tvTakePick;
+    GridLayout grid ;
     Uri fileUri;
 
+    Animation animationFadeIn,animationFadeOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +46,9 @@ public class MenuActivity extends Activity  {
         btnWhatsThere = (Button)findViewById(R.id.btnWhatsThere);
         tvWhatsThere = (TextView)findViewById(R.id.tvWhatsThere);
         tvTakePick   = (TextView)findViewById(R.id.tvTakePic);
-
+        animationFadeIn = AnimationUtils.loadAnimation(this,R.anim.fade_in_with_bounce);
+        animationFadeOut = AnimationUtils.loadAnimation(this,R.anim.fade_out);
+        grid = (GridLayout)findViewById(R.id.menuGrid);
         Typeface font = Typeface.createFromAsset(getAssets(), "Bellerose.ttf");
         tvWhatsThere.setTypeface(font);
         tvTakePick.setTypeface(font);
@@ -63,9 +71,6 @@ public class MenuActivity extends Activity  {
         btnWhatsThere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
                 Intent intent = new Intent(MenuActivity.this,WhatsThereActivty.class);
                 startActivity(intent);
             }
@@ -74,40 +79,10 @@ public class MenuActivity extends Activity  {
     }
 
     public Uri getOutputMediaFileUri(int type) {
-        return Uri.fromFile(getOutputMediaFile(type));
+        return Uri.fromFile(FileUtils.getOutputMediaFile(type));
     }
 
-    private static File getOutputMediaFile(int type) {
 
-        // External sdcard location
-        File mediaStorageDir = new File(
-                Environment
-                        .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-                IMAGE_DIRECTORY_NAME);
-
-        // Create the storage directory if it does not exist
-        if (!mediaStorageDir.exists()) {
-            if (!mediaStorageDir.mkdirs()) {
-                Log.d(IMAGE_DIRECTORY_NAME, "Oops! Failed create "
-                        + IMAGE_DIRECTORY_NAME + " directory");
-                return null;
-            }
-        }
-
-        // Create a media file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",
-                Locale.getDefault()).format(new Date());
-        File mediaFile;
-        if (type == MEDIA_TYPE_IMAGE) {
-            mediaFile = new File(mediaStorageDir.getPath() + File.separator
-                    + "IMG_" + timeStamp + ".jpg");
-        }
-        else{
-            return null;
-        }
-
-        return mediaFile;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -133,6 +108,34 @@ public class MenuActivity extends Activity  {
     public void onBackPressed() {
         moveTaskToBack(true);
         MenuActivity.this.finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        grid.setAnimation(animationFadeIn);
+        grid.animate();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        grid.setAnimation(animationFadeIn);
+        grid.animate();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        grid.setAnimation(animationFadeOut);
+        grid.animate();
     }
 
     @Override
