@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import com.app.whatsthere.locationservice.WtLocationServices;
 import com.app.whatsthere.utils.FileUtils;
 
 import java.io.File;
@@ -42,16 +43,10 @@ public class MenuActivity extends Activity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        btnTakePic = (Button)findViewById(R.id.btnTakePic);
-        btnWhatsThere = (Button)findViewById(R.id.btnWhatsThere);
-        tvWhatsThere = (TextView)findViewById(R.id.tvWhatsThere);
-        tvTakePick   = (TextView)findViewById(R.id.tvTakePic);
-        animationFadeIn = AnimationUtils.loadAnimation(this,R.anim.fade_in_with_bounce);
-        animationFadeOut = AnimationUtils.loadAnimation(this,R.anim.fade_out);
-        grid = (GridLayout)findViewById(R.id.menuGrid);
-        Typeface font = Typeface.createFromAsset(getAssets(), "Bellerose.ttf");
-        tvWhatsThere.setTypeface(font);
-        tvTakePick.setTypeface(font);
+        loadControls();
+        loadAnimations();
+        startLocationServices();
+
         btnTakePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,6 +73,26 @@ public class MenuActivity extends Activity  {
 
     }
 
+    private void loadAnimations() {
+        animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in_with_bounce);
+        animationFadeOut = AnimationUtils.loadAnimation(this,R.anim.fade_out);
+    }
+
+    private void loadControls() {
+        btnTakePic = (Button)findViewById(R.id.btnTakePic);
+        btnWhatsThere = (Button)findViewById(R.id.btnWhatsThere);
+        tvWhatsThere = (TextView)findViewById(R.id.tvWhatsThere);
+        tvTakePick   = (TextView)findViewById(R.id.tvTakePic);
+        grid = (GridLayout)findViewById(R.id.menuGrid);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Bellerose.ttf");
+        tvWhatsThere.setTypeface(font);
+        tvTakePick.setTypeface(font);
+    }
+
+    public void startLocationServices(){
+        WtLocationServices wtLocationServices = WtLocationServices.getInstance(this);
+
+    }
     public Uri getOutputMediaFileUri(int type) {
         return Uri.fromFile(FileUtils.getOutputMediaFile(type));
     }

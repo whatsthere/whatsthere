@@ -62,6 +62,7 @@ public class PictureUploader {
                ImageUploadCallback callback = (ImageUploadCallback) params [1];
 
                    builder.build();
+
                    builder.httpPost.setEntity(builder.multiPartEntity);
                    Log.i(TAG, "request " +   builder.httpPost.getRequestLine());
 

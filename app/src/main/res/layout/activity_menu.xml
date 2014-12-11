@@ -3,7 +3,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:gravity="center"
-
+    android:background="@android:color/darker_gray"
      >
 
 <GridLayout
