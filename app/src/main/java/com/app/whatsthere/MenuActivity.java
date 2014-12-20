@@ -84,7 +84,7 @@ public class MenuActivity extends Activity  {
         tvWhatsThere = (TextView)findViewById(R.id.tvWhatsThere);
         tvTakePick   = (TextView)findViewById(R.id.tvTakePic);
         grid = (GridLayout)findViewById(R.id.menuGrid);
-        Typeface font = Typeface.createFromAsset(getAssets(), "Bellerose.ttf");
+        Typeface font = Typeface.createFromAsset(getAssets(), "RODUSround700.otf");
         tvWhatsThere.setTypeface(font);
         tvTakePick.setTypeface(font);
     }

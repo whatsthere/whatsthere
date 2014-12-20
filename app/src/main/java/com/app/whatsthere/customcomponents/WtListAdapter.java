@@ -61,7 +61,7 @@ public class WtListAdapter extends BaseAdapter {
             WtListItem listItem = whatsThereDatalist.get(position);
 
             TextView titleTextVie =(TextView) wtListItemView.findViewById(R.id.hashTagLabel);
-            Typeface font = Typeface.createFromAsset(context.getAssets(), "Bellerose.ttf");
+            Typeface font = Typeface.createFromAsset(context.getAssets(),"RODUSround700.otf" );
             titleTextVie.setTypeface(font);
             final ArrayList<String> data = (ArrayList<String>) listItem.getImages();
 

@@ -63,17 +63,13 @@ public class DownloadedImagesPreviewActivity extends Activity {
                     with(DownloadedImagesPreviewActivity.this).
                     load(urls.get(position)).
                     into(imageView);
-
             LinearLayout layout = new LinearLayout(DownloadedImagesPreviewActivity.this);
             layout.setOrientation(LinearLayout.VERTICAL);
             LayoutParams layoutParams = new LayoutParams(
                     LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
             layout.setBackgroundResource(R.drawable.rounded_corners_imageview);
-
             layout.setLayoutParams(layoutParams);
-
             layout.addView(imageView);
-
             container.addView(layout);
 
             return  layout;

@@ -15,4 +15,10 @@
     <string name="title_activity_image_preview">ImagePreviewActivity</string>
     <string name="title_activity_captured_image_preview">CapturedImagePreviewActivity</string>
 
+
+    <string-array name="nav_drawer_items">
+        <item >Upload hashtag</item>
+        <item >Whatsthere hashtags</item>
+        <item >Whatsthere my location</item>
+    </string-array>
 </resources>

@@ -144,11 +144,11 @@ public class PictureUploader {
                   File file =  ImageUtils.compressFile((File)entry.getValue(),50);
 
 
-                   multiPartEntity.addPart(entry.getKey(),new FileBody(file,"image/jpeg"));
+                   multiPartEntity.addPart(entry.getKey(),new FileBody(file,"image/png"));
                 }else
                 {
                     try {
-                        multiPartEntity.addPart("name", new StringBody(entry.getValue().toString()));
+                        multiPartEntity.addPart(entry.getKey(), new StringBody(entry.getValue().toString()));
                     }catch (UnsupportedEncodingException e){
                         e.printStackTrace();
                     }

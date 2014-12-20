@@ -3,6 +3,7 @@ package com.app.whatsthere;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
@@ -17,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.app.whatsthere.Constants;
 import com.app.whatsthere.api.PictureApi;
@@ -60,6 +62,10 @@ public class CapturedImagePreviewActivity extends Activity {
         hashTagTextEdit = (EditText)findViewById(R.id.hashTagTextEdit);
         imageUri  = Uri.parse(getIntent().getExtras().getString(IMAGE_URI));
 
+
+        Typeface font = Typeface.createFromAsset(this.getAssets(), "RODUSround700.otf");
+        hashTagTextEdit.setTypeface(font);
+        btnUploadPic.setTypeface(font);
 
        Picasso.with(this).load(imageUri).into(imageView,new com.squareup.picasso.Callback() {
            @Override
@@ -116,7 +122,7 @@ public class CapturedImagePreviewActivity extends Activity {
         String formattedLocation = String.valueOf(bestLocation.getLatitude())+","+String.valueOf(bestLocation.getLongitude());
         builder.addPart("file",file)
                 .addPart("location",formattedLocation)
-                .addPart("name",hashTagTextEdit.getText().toString())
+                .addPart("hashTagText",hashTagTextEdit.getText().toString())
                 .addPart("fbToken",faceBookToken)
                 .addPart("timeStamp",ts)
                 .setUrl(Constants.UPLOAD_IMAGE_API);
