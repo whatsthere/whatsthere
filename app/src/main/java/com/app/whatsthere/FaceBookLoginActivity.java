@@ -9,6 +9,8 @@ import android.app.FragmentManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.app.whatsthere.facebook.FaceBookUser;
 import com.facebook.*;
 import com.facebook.Session;
 import android.content.Intent;
@@ -112,7 +114,16 @@ public class FaceBookLoginActivity extends FragmentActivity implements Session.S
                 // If the session state is open:
                 // Show the authenticated fragment
 //                showFragment(SPLASH, false);
-                didFinshLoading();
+
+                Request.newMeRequest(session,new Request.GraphUserCallback() {
+                    @Override
+                    public void onCompleted(GraphUser user, Response response) {
+                        FaceBookUser faceBookUser = FaceBookUser.getInstance();
+                        faceBookUser.setUser(user);
+                        didFinshLoading();
+                    }
+                }).executeAsync();
+
             } else if (state.isClosed()) {
                 // If the session state is closed:
                 // Show the login fragment
@@ -131,7 +142,14 @@ public class FaceBookLoginActivity extends FragmentActivity implements Session.S
             // if the session is already open,
             // try to show the selection fragment
 //            showFragment(SPLASH, false);
-            didFinshLoading();
+            Request.newMeRequest(session,new Request.GraphUserCallback() {
+                @Override
+                public void onCompleted(GraphUser user, Response response) {
+                    FaceBookUser faceBookUser = FaceBookUser.getInstance();
+                    faceBookUser.setUser(user);
+                    didFinshLoading();
+                }
+            }).executeAsync();
         } else {
             // otherwise present the splash screen
             // and ask the person to login.

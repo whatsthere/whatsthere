@@ -1,71 +1,21 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="@drawable/background_shape"
-     >
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-<GridLayout
-
-    android:id="@+id/menuGrid"
-    android:layout_gravity="center"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:columnCount="2"
-    android:rowCount="2"
-    android:orientation="horizontal"
-    android:layout_alignParentTop="true"
-    android:background="@android:drawable/dialog_holo_light_frame"
-     >
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="20dp">
-    <TextView
-        android:layout_margin="5dp"
-        android:id="@+id/tvTakePic"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Take a picture"
-        android:gravity="center"/>
-    <Button
-        android:id="@+id/btnTakePic"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/instagram"
-        android:layout_gravity="left|top"
-        android:layout_marginLeft="30dp"
-        android:gravity="center"
-
-        />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="20dp">
-    <TextView
-        android:id="@+id/tvWhatsThere"
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="whats there?"
-        android:gravity="center"
-        android:textSize="20sp"/>
-    <Button
-        android:id="@+id/btnWhatsThere"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/marker"
-        android:layout_gravity="left|top"
-        android:layout_marginLeft="30dp"/>
-    </LinearLayout>
-</GridLayout>
+    <!-- Framelayout to display Fragments -->
 
 
-</LinearLayout>
+    
+        <android.support.v4.view.ViewPager
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/pager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+
+
+</android.support.v4.widget.DrawerLayout>
